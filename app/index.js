@@ -5,7 +5,7 @@ var greeting = 'Time is a flat Circle.';
 
 function setup() {
   noCursor();
-  createCanvas(720, 400);
+  createCanvas(windowWidth, windowHeight);
   img = loadImage('img/eso1510a.jpg');
   imageMode(CENTER);
   noStroke();
@@ -32,4 +32,8 @@ function draw() {
   var pix = img.get(x, y);
   fill(pix, 128);
   ellipse(x, y, radius, radius);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
