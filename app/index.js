@@ -1,6 +1,6 @@
 var img;
 var index = 0;
-var pi = '3.14159265358979323846264338';
+var pi;
 
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
@@ -9,15 +9,16 @@ function setup() {
   noStroke();
   background(255);
   frameRate(999);
-  // loadJSON('/data/pi.json', function(data){
-  //   debugger;
-  // });
+  loadJSON('/data/pi.json', function(data){
+    pi = data.pi;
+  });
 }
 
 function draw() {
   index = ++index % pi.length;
   var radius = parseInt(pi.charAt(index));
   radius *= 2;
+  console.log(radius);
   var x = floor(random(img.width));
   var y = floor(random(img.height));
   var pix = img.get(x, y);
