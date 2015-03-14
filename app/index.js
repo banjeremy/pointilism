@@ -1,11 +1,6 @@
 var img;
-var smallPoint, largePoint;
 var pi = '3.14159265359';
 var greeting = 'Time is a flat Circle.';
-
-function windowSize() {
-
-}
 
 function setup() {
   noCursor();
@@ -24,11 +19,12 @@ function setup() {
 }
 
 function draw() {
-  var pointillize = 3;
-
+  index = ++index % pi.length;
+  var radius = parseInt(pi.charAt(index));
+  radius *= 2;
   var x = floor(random(img.width));
   var y = floor(random(img.height));
   var pix = img.get(x, y);
   fill(pix, 128);
-  ellipse(x, y, pointillize, pointillize);
+  ellipse(x, y, radius, radius);
 }
