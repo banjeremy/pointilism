@@ -1,11 +1,10 @@
 var img;
 var index = 0;
 var pi;
-var greeting = 'Time is a flat Circle.';
 
 function setup() {
   noCursor();
-  createCanvas(window.innerWidth, window.innerHeight);
+  createCanvas(windowWidth, windowHeight);
   img = loadImage('img/eso1510a.jpg');
   imageMode(CENTER);
   noStroke();
@@ -15,11 +14,6 @@ function setup() {
     pi = data.pi;
   });
   fill(0);
-  text(greeting, 175, 175, 1000, 1000);
-  textSize(150);
-  textAlign(CENTER);
-  textStyle(BOLD);
-  textFont("Helvetica");
 }
 
 function draw() {
@@ -33,4 +27,8 @@ function draw() {
     fill(pix, 128);
     ellipse(x, y, radius, radius);
   }
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
