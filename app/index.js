@@ -1,9 +1,11 @@
 var img;
 var index = 0;
 var pi;
+var greeting = 'Time is a flat Circle.';
 
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
+  noCursor();
+  createCanvas(720, 400);
   img = loadImage('img/eso1510a.jpg');
   imageMode(CENTER);
   noStroke();
@@ -12,6 +14,12 @@ function setup() {
   loadJSON('/data/pi.json', function(data){
     pi = data.pi;
   });
+  fill(0);
+  text(greeting, 175, 175, 1000, 1000);
+  textSize(150);
+  textAlign(CENTER);
+  textStyle(BOLD);
+  textFont("Helvetica");
 }
 
 function draw() {
