@@ -9,7 +9,7 @@ function setup() {
   imageMode(CENTER);
   noStroke();
   background(255);
-  frameRate(2500);
+  frameRate(60);
   loadJSON('/data/pi.json', function(data){
     pi = data.pi;
   });
@@ -17,14 +17,16 @@ function setup() {
 
 function draw() {
   if (pi) {
-    index = ++index % pi.length;
-    var radius = parseInt(pi.charAt(index));
-    radius *= Math.PI;
-    var x = floor(random(img.width));
-    var y = floor(random(img.height));
-    var pix = img.get(x, y);
-    fill(pix, 128);
-    ellipse(x, y, radius, radius);
+    for (var i = 0; i < 200; i++) {
+      index = ++index % pi.length;
+      var radius = parseInt(pi.charAt(index));
+      radius *= Math.PI;
+      var x = floor(random(img.width));
+      var y = floor(random(img.height));
+      var pix = img.get(x, y);
+      fill(pix, 128);
+      ellipse(x, y, radius, radius);
+    }
   }
 }
 
