@@ -9,18 +9,17 @@ function setup() {
   imageMode(CENTER);
   noStroke();
   background(255);
-  frameRate(999);
+  frameRate(2500);
   loadJSON('/data/pi.json', function(data){
     pi = data.pi;
   });
-  fill(0);
 }
 
 function draw() {
   if (pi) {
     index = ++index % pi.length;
     var radius = parseInt(pi.charAt(index));
-    radius *= 2;
+    radius *= Math.PI;
     var x = floor(random(img.width));
     var y = floor(random(img.height));
     var pix = img.get(x, y);
