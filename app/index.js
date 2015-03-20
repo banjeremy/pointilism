@@ -10,7 +10,7 @@ function setup() {
   noStroke();
   background(255);
   frameRate(60);
-  loadJSON('/data/pi.json', function(data){
+  loadJSON('data/pi.json', function(data){
     pi = data.pi;
   });
 }
